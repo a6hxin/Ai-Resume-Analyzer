@@ -1,0 +1,133 @@
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+   
+    background-image: url("/static/su571.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    min-height: 100vh;
+    transition: all 0.3s ease;
+}
+
+.container{
+    text-align:center;
+    margin-top:80px;
+}
+
+h1{
+    font-size:40px;
+    color:#333;
+}
+
+.subtitle{
+    color:#777;
+}
+
+.upload-box{
+    margin:30px;
+}
+
+button{
+    padding:12px 25px;
+    background:#4CAF50;
+    color:white;
+    border:none;
+    font-size:16px;
+    border-radius:5px;
+    cursor:pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover{
+    background:#3e8e41;
+}
+
+.result-card{
+    margin-top:40px;
+    background:white;
+    width:500px;
+    margin-left:auto;
+    margin-right:auto;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+.score{
+    font-size:40px;
+    color:#4CAF50;
+    margin:20px;
+}
+
+.skills{
+    display:flex;
+    justify-content:space-between;
+}
+
+.skill-box{
+    width:45%;
+}
+
+.skill-box ul{
+    list-style:none;
+    padding:0;
+}
+
+.skill-box li{
+    background:#f2f2f2;
+    padding:8px;
+    margin:5px;
+    border-radius:5px;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url("/static/ast.jpg.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin:8%;
+}
+.container{
+    text-align:center;
+    margin-top:80px;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(10px);
+    padding:40px;
+    width:600px;
+    margin-left:auto;
+    margin-right:auto;
+    border-radius:12px;
+
+    height: auto;      /* important */
+}
+
+button:hover{
+    background:#2e7d32;
+    transform:scale(1.05);
+}
+.back-btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:10px 20px;
+    background:#2196F3;
+    color:white;
+    text-decoration:none;
+    border-radius:6px;
+}
+
+.back-btn:hover{
+    background:#0b7dda;
+}
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform: translateY(10px);
+    }
+    to{
+        opacity:1;
+        transform: translateY(0);
+    }
+}

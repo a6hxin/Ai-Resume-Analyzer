@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Resume Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <form method="POST" enctype="multipart/form-data" autocomplete="off"></form>
+</head>
+
+<body>
+    
+<div class="container">
+
+    <h1>AI Resume Analyzer</h1>
+    <p class="subtitle">Upload your resume and check your skill score</p>
+
+    <form method="POST" enctype="multipart/form-data">
+
+        <div class="upload-box">
+            <input type="file" name="resume" required>
+        </div>
+
+        <button type="submit">Analyze Resume</button>
+
+    </form>
+
+    {% if result %}
+
+    <div class="result-card">
+
+        <h2>Resume Score</h2>
+        <div class="score">{{ result.score }} / 100</div>
+        <canvas id="scoreChart" width="200" height="200"></canvas>
+
+        <div class="skills">
+
+            <div class="skill-box">
+                <h3>Detected Skills</h3>
+                <ul>
+                    {% for skill in result.skills %}
+                    <li>{{ skill }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="skill-box">
+                <h3>Missing Skills</h3>
+                <ul>
+                    {% for skill in result.missing %}
+                    <li>{{ skill }}</li>
+                    {% endfor %}
+                </ul>
+                <a href="/" class="back-btn">Analyze Another Resume</a>
+            </div>
+
+        </div>
+
+    </div>
+
+    {% endif %}
+
+</div>
+<script>
+
+{% if result %}
+
+const score = {{ result.score }};
+
+const data = {
+    datasets: [{
+        data: [score, 100-score],
+        backgroundColor: ["#4CAF50", "#e0e0e0"]
+    }]
+};
+
+const config = {
+    type: 'doughnut',
+    data: data,
+};
+
+new Chart(
+    document.getElementById('scoreChart'),
+    config
+);
+
+{% endif %}
+
+</script>
+
+</body>
+</html>
