@@ -28,6 +28,7 @@ h1{
 
 .upload-box{
     margin:30px;
+    size: 4cm;
 }
 
 button{
@@ -104,9 +105,10 @@ body{
     height: auto;      /* important */
 }
 
-button:hover{
-    background:#2e7d32;
-    transform:scale(1.05);
+button:hover {
+    background-color: #45a049;
+    transform: scale(1.03);
+    transition: 0.2s ease;
 }
 .back-btn{
     display:inline-block;
@@ -130,4 +132,66 @@ button:hover{
         opacity:1;
         transform: translateY(0);
     }
+}
+.job-box {
+    margin-top: 10px;
+    margin-bottom: 14px;
+}
+textarea{
+    width: 250px;
+    height: 40px;
+    padding: 7px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    resize: none;
+}
+
+textarea:focus{
+    outline: none;
+    border: 1px solid #4CAF50;
+    box-shadow: 0 0 5px rgba(76,175,80,0.4);
+}
+.progress {
+  width: 300px;
+  height: 10px;
+  background: #eee;
+  border-radius: 5px;
+}
+
+.progress-bar {
+  height: 10px;
+  background: #4CAF50;
+  border-radius: 5px;
+}
+input[list]{
+    width: 400px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-top: 1px;
+}
+#jobInput{
+width: 350px;
+padding: 10px;
+border-radius: 6px;
+border: 1px solid #ccc;
+margin-top: 10px;
+}
+
+#suggestions{
+width: 350px;
+background: white;
+border-radius: 6px;
+margin-top: 15px;
+}
+
+#suggestions div{
+padding: 8px;
+cursor: pointer;
+border-bottom: 1px solid #eee;
+}
+
+#suggestions div:hover{
+background: #f2f2f2;
 }

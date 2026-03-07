@@ -33,3 +33,14 @@ def calculate_score(skills):
             missing.append(skill)
 
     return score, missing
+
+def job_match(resume_text, job_desc):
+
+    resume_words = set(resume_text.split())
+    job_words = set(job_desc.lower().split())
+
+    matched = resume_words & job_words
+
+    score = int(len(matched) / len(job_words) * 100)
+
+    return score

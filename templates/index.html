@@ -9,6 +9,7 @@
 
 <body>
     
+    
 <div class="container">
 
     <h1>AI Resume Analyzer</h1>
@@ -20,17 +21,37 @@
             <input type="file" name="resume" required>
         </div>
 
+<input list="jobs" name="job_desc" placeholder="Type job role...">
+
+<datalist id="jobs">
+<option value="Python Developer">
+<option value="Frontend Developer">
+<option value="Backend Developer">
+<option value="Full Stack Developer">
+<option value="Data Analyst">
+<option value="Machine Learning Engineer">
+<option value="Software Engineer">
+<option value="Web Developer">
+</datalist>
+<div id="suggestions"></div>
+
         <button type="submit">Analyze Resume</button>
 
     </form>
 
-    {% if result %}
 
-    <div class="result-card">
+{% if result %}
 
-        <h2>Resume Score</h2>
-        <div class="score">{{ result.score }} / 100</div>
-        <canvas id="scoreChart" width="200" height="200"></canvas>
+<div class="score">
+{{ result.match }} 
+</div>
+<h2>Resume Score</h2>
+<h3>{{ result.score }} / 100</h3>
+
+<canvas id="scoreChart" width="200" height="200"></canvas>
+{% if result %}
+
+{% endif %}
 
         <div class="skills">
 
@@ -60,6 +81,10 @@
     {% endif %}
 
 </div>
+{% if result %}
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 <script>
 
 {% if result %}
@@ -85,6 +110,8 @@ new Chart(
 
 {% endif %}
 
+</script>
+{% endif %}
 </script>
 
 
