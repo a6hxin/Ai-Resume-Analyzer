@@ -2,6 +2,8 @@
 
 AI Resume Analyzer is a Flask-based web application that analyzes resumes and detects skills to generate a resume score.
 
+***Live Demo:- https://rankcv.vercel.app
+
 ![UI Preview](assets/ui-preview.png)
 
 ## Features
